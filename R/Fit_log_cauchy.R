@@ -4,6 +4,7 @@
 #' @param y A numeric vector of the same length as x.
 #' @param show_plot Logical; whether to show the fitted curve.
 #' @return A vector containing fitting parameters.
+#' @export
 
 Fit_log_cauchy = function(x,y,show_plot=FALSE) {
   y[0] = 1

@@ -7,7 +7,7 @@
 #'
 #' @return A numeric value giving the CCC between x and y.
 #' @export
-#' @import Matrix
+
 
 CCC_computation = function(x,y) {
   return(2*sd(x,na.rm = T)*sd(y,na.rm = T)/(var(x,na.rm = T)+var(y,na.rm = T)+(mean(x)-mean(y))^2))
