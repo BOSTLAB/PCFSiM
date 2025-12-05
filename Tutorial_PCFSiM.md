@@ -31,16 +31,15 @@ List_pcf = Compute_pcf(sce, r_vector = seq(0, 10000, length.out = 50), computati
 We can fit different models to the PCF data for a specific cluster. In this example, we will fit models for cluster `k = 3`.
 
 ```R
-k = 3
+k = 13
+
 x = List_pcf$List_r[[k]]
 y = List_pcf$List_pcf[[k]]
 
-# Fit exponential model
-m_expo = try(Fit_exponential(x, y, show_plot = TRUE))
-
-# Fit sigmoid model
-m_sigmoid = try(Fit_sigmoid(x, y, show_plot = TRUE))
+m_expo = try(Fit_exponential(x,y,show_plot = TRUE))
+m_sigmoid = try(Fit_sigmoid(x,y,show_plot = TRUE))
 ```
+<img src= 'Example_data/QC.png' width="1000" height="500">
 
 ## Step 5: Retrieve Fitting Results for All Clusters
 
