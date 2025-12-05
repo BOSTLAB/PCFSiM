@@ -1,13 +1,13 @@
  # PCFSiM Tutorial
 
-This tutorial provides a step-by-step guide on how to use the PCFSiM library for analyzing spatial point patterns in single-cell data. 
+This tutorial provides a step-by-step guide on how to use the PCFSiM library for analyzing spatial point patterns in single-cell data. We have provided as Example data a [CosMx Human Frontal Cortex dataset](https://nanostring.com/products/cosmx-spatial-molecular-imager/ffpe-dataset/human-frontal-cortex-ffpe-dataset/).
 
 ## Step 1: Load Metadata
 
 First, we need to load the metadata containing for each observation (here cells), information about the location on both axis and the label associated (here the cluster of each cell).
 
 ```R
-Meta_data = read.csv(path_to_metadata)
+Meta_data = read.csv('Example_data/Frontal_cortex_data.csv')
 ```
 
 ## Step 2: Create SCE Object
@@ -20,10 +20,10 @@ sce = Create_sce_object(Meta_data,cell_centroid_x = "cell_centroid_x",cell_centr
 
 ## Step 3: Compute Pair Correlation Function (PCF)
 
-Now, we compute the pair correlation function (PCF) using the SCE object. We define a range of distances (`r_vector`) and specify the computation method.
+Now, we compute the pair correlation function (PCF) using the SCE object. We define a range of distances according to the size of the tissue and specify the computation method. 
 
 ```R
-List_pcf = Compute_pcf(sce, r_vector = seq(0, 2000, length.out = 50), computation_method = "derivative", verbose = TRUE)
+List_pcf = Compute_pcf(sce, r_vector = seq(0, 10000, length.out = 50), computation_method = "direct", verbose = TRUE)
 ```
 
 ## Step 4: Fit Models for a Specific Cluster
