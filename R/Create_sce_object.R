@@ -6,6 +6,7 @@
 #' @param Clustering Name of the column for cluster labels (default: "Clustering").
 #' @return A SingleCellExperiment object with coordinates and cluster labels.
 #' @importFrom SingleCellExperiment SingleCellExperiment
+#' @importFrom SingleCellExperiment colLabels
 #' @export 
 
 Create_sce_object = function(df, cell_centroid_x='cell_centroid_x',cell_centroid_y='cell_centroid_y',Clustering='Clustering') {
@@ -22,7 +23,7 @@ Create_sce_object = function(df, cell_centroid_x='cell_centroid_x',cell_centroid
       Is_nuc_cyt = FALSE
     )
   )
-  colLabels(sce) = as.numeric(df[[Clustering]])
+  SingleCellExperiment::colLabels(sce) = as.numeric(df[[Clustering]])
   sce$Location_Center_X =df[[cell_centroid_x]]
   sce$Location_Center_Y = df[[cell_centroid_y]]
   sce$ImageNumber =  1

@@ -8,6 +8,7 @@
 #'   \item{List_pcf}{A list of PCF values for each ROI × cluster combination}
 #'   \item{List_r}{A list of matching radius values}
 #'   \item{Annotation}{A data.frame linking PCF entries to ROI and cluster}
+#' @importFrom spatstat.explore pcf.ppp
 #' @export
 #' 
 
