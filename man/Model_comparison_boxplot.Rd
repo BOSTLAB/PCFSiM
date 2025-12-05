@@ -5,11 +5,15 @@
 \title{Makes a boxplot comparing the R2 of different Pcf fitted model}
 \usage{
 Model_comparison_boxplot(
-  list_results = list(Results_power_law, Results_exponential)
+  list_results = list(Model_Sigmoid = Results_sigmoid, Model_exponential =
+    Results_exponential)
 )
 }
 \arguments{
-\item{list_results}{A list containing the results of different fitted models}
+\item{list_results}{A named list where each element is a \code{data.frame} or
+a similar structure containing the fitting results for a specific model.
+Each element **must** contain a column named \code{R2} storing the
+coefficient of determination for each fit performed.}
 }
 \value{
 NULL This function does not return a value; it displays a plot.

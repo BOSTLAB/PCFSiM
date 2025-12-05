@@ -4,7 +4,11 @@
 \alias{Plot_selected_cluster}
 \title{Plot cells of a selected cluster}
 \usage{
-Plot_selected_cluster(selected_cluster, title_show = NULL)
+Plot_selected_cluster(
+  Meta_data = Meta_data,
+  selected_cluster,
+  title_show = NULL
+)
 }
 \arguments{
 \item{selected_cluster}{Cluster name or ID to plot.}

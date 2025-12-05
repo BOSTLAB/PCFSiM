@@ -21,7 +21,8 @@ Perform_spatial_sampling_fitting(
 \item{N_sampling}{Number of spatial samplings to perform before filtering.}
 }
 \value{
-A list containing:
+The function returns the distribution of fitted parameters
+across all valid sampled regions :
 \describe{
   \item{Tau}{Matrix of \eqn{\tau} values across samplings.}
   \item{P}{Matrix of \eqn{p} values across samplings.}
@@ -31,6 +32,5 @@ A list containing:
 }
 \description{
 Perform random spatial sampling on a \code{SingleCellExperiment} object, compute the PCF on each sampled region, 
-and fit a parametric PCF model (Sigmoid). The function returns the distribution of fitted parameters
-across all valid sampled regions.
+and fit a parametric PCF model (Sigmoid).
 }

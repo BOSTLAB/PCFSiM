@@ -1,3 +1,16 @@
+#' Fit Mixed Interaction Model to PCF Data
+#'
+#'
+#' @param x A numeric vector representing the distance values (r) for the PCF.
+#' @param y A numeric vector representing the PCF values (\code{g(r)}) corresponding to \code{x}.
+#' @param show_plot A logical value. If \code{TRUE}, a plot will be generated. Default is \code{FALSE}.
+#'
+#' @return A named numeric vector containing the fitted parameters and statistics.
+#' @importFrom minpack.lm nlsLM nls.lm.control
+#' @importFrom stats coef residuals var
+#'
+#' @export
+
 Fit_mixed_interaction = function(x,y,show_plot=FALSE) {
   y[0] = 1
   First_reach = min(which(y[-1]>=1))

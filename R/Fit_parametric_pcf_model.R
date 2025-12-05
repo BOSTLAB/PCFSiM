@@ -1,4 +1,30 @@
-Fit_parametric_pcf_model = function(List_pcf,model="Generalized_gamma") {
+#' Fit Parametric Models to the Pair Correlation Function (PCF)
+#'
+#' @param List_pcf A list containing the PCF data to be fitted. It must contain:
+#'   \describe{
+#'     \item{\code{List_pcf}}{A list of numeric vectors, where each vector is the g(r) value of the PCF.}
+#'     \item{\code{List_r}}{A list of numeric vectors, where each vector is the corresponding distance r for the PCF.}
+#'   }
+#' @param model A character string specifying the parametric model to fit. Supported options are:
+#'   \itemize{
+#'     \item "Power_law"
+#'     \item "Generalized_gamma"
+#'     \item "Exponential"
+#'     \item "Beta_prime"
+#'     \item "Log_Cauchy"
+#'     \item "Generalized_beta_prime"
+#'     \item "Dagum"
+#'     \item "Gamma"
+#'     \item "Sigmoid" (default)
+#'     \item "Log_Laplace"
+#'   }
+#'
+#' @return A \code{data.frame} containing the fitted parameters for each PCF in the input list.
+#'
+#' @export
+
+
+Fit_parametric_pcf_model = function(List_pcf,model="Sigmoid") {
   
   N_pcf = length(List_pcf$List_pcf)
   Table_fitted_parameters = c()

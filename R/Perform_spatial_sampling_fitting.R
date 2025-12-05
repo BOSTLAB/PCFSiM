@@ -1,21 +1,24 @@
 #' Perform spatial subsampling and fit parametric PCF models
 #'
 #' Perform random spatial sampling on a \code{SingleCellExperiment} object, compute the PCF on each sampled region, 
-#' and fit a parametric PCF model (Sigmoid). The function returns the distribution of fitted parameters
-#' across all valid sampled regions.
+#' and fit a parametric PCF model (Sigmoid). 
 #'
 #' @param sce A \code{SingleCellExperiment} object.
 #' @param N_min_cells Minimum number of cells required to compute the PCF.
 #' @param FoV_width Width (in pixels or microns) of the square Field of View used for sampling.
 #' @param N_sampling Number of spatial samplings to perform before filtering.
 #'
-#' @return A list containing:
+#' @return The function returns the distribution of fitted parameters
+#' across all valid sampled regions :
 #' \describe{
 #'   \item{Tau}{Matrix of \eqn{\tau} values across samplings.}
 #'   \item{P}{Matrix of \eqn{p} values across samplings.}
 #'   \item{C_normalised}{Matrix of normalised amplitudes.}
 #'   \item{R2}{Matrix of model \eqn{R^2} values.}
 #' }
+#' @importFrom balagan Random_spatial_sampling
+#' @importFrom SingleCellExperiment colLabels
+#' @importFrom spatstat.explore Kest.fft pcf.fv
 #' @export
 
 Perform_spatial_sampling_fitting = function(sce,N_min_cells = 1000,FoV_width=500,N_sampling = 500) {
@@ -48,7 +51,7 @@ Perform_spatial_sampling_fitting = function(sce,N_min_cells = 1000,FoV_width=500
     Results_sigmoid_temp = Results_sigmoid_temp[as.character(List_pcf$Annotation$Cluster),]
     Table_sampling_tau = rbind(Table_sampling_tau,Results_sigmoid_temp$tau)
     Table_sampling_p = rbind(Table_sampling_p,Results_sigmoid_temp$p)
-    Table_sampling_C_normalised = rbind(Table_sampling_C,Results_sigmoid_temp$C_normalised)
+    Table_sampling_C_normalised = rbind(Table_sampling_C_normalised,Results_sigmoid_temp$C_normalised)
     Table_sampling_R2 = rbind(Table_sampling_R2,Results_sigmoid_temp$R2)
   }
   cat("done ! \n")

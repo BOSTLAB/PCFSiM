@@ -4,8 +4,8 @@
 #' @param cell_centroid_x Name of the column for x coordinates (default: "cell_centroid_x").
 #' @param cell_centroid_y Name of the column for y coordinates (default: "cell_centroid_y").
 #' @param Clustering Name of the column for cluster labels (default: "Clustering").
-#'
 #' @return A SingleCellExperiment object with coordinates and cluster labels.
+#' @importFrom SingleCellExperiment SingleCellExperiment
 #' @export 
 
 Create_sce_object = function(df, cell_centroid_x='cell_centroid_x',cell_centroid_y='cell_centroid_y',Clustering='Clustering') {
