@@ -18,8 +18,8 @@ Fit_mixed_interaction = function(x,y,show_plot=FALSE) {
   data_temp = data.frame(x = x,y=y)
   data_temp = data_temp[-1,]
   
-  curve.nlslrc = nlsLM(y ~ (x^alpha)*exp(-(x*tau)^p)*constant+1,start = list(alpha=-0.5,tau=0.1,p=1,constant=max(y)),
-                       data = data_temp,control = nls.lm.control(maxiter=1000),lower = c(-0.9999,0,0,0))
+  curve.nlslrc = minpack.lm::nlsLM(y ~ (x^alpha)*exp(-(x*tau)^p)*constant+1,start = list(alpha=-0.5,tau=0.1,p=1,constant=max(y)),
+                       data = data_temp,control = minpack.lm::nls.lm.control(maxiter=1000),lower = c(-0.9999,0,0,0))
   
   
   
