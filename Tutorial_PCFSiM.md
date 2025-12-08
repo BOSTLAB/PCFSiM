@@ -60,7 +60,7 @@ For each cluster, the results consist of 2 lists of equal length, one containing
 ```
 ## Step 4: Fit Models for a Specific Cluster
 
-We can fit different models to the PCF data for a specific cluster. In this example, we will fit models for cluster `k = 3`.
+We can fit different models to the PCF data for a specific cluster. In this example, we will fit models for cluster `k = 10`.
 
 ```R
 k = 10
