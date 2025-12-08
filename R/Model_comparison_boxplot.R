@@ -11,6 +11,6 @@ Model_comparison_boxplot = function(list_results=list(Model_Sigmoid = Results_si
   names = names(list_results)
   par(las=1,bty='l')
   boxplot(lapply(list_results, function(x) x$R2), ylim=c(0.4,1),xaxs='i',yaxs='i',names=names,
-          xlab="Model",ylab="R2",cex.lab=1.3,col=brewer.pal(length(list_results),"Spectral"),cex.axis=0.7)
+          xlab="Model",ylab="R2",cex.lab=1.3,col=RColorBrewer::brewer.pal(length(list_results),"Spectral"),cex.axis=0.7)
   return(invisible())
 }
