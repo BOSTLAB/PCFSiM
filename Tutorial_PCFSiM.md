@@ -25,7 +25,7 @@ Now, we compute the pair correlation function (PCF) using the SCE object. We def
 ```R
 List_pcf = Compute_pcf(sce, r_vector = seq(0, 10000, length.out = 50), computation_method = "direct", verbose = TRUE)
 ```
-For each cluster, the results consist of 2 lists of equal length, one containing the r distances, the other with the computed PCF values at each distance.
+For each cluster, the results consist of 3 lists. 2 of them are of equal length, one containing the r distances, the other with the computed PCF values at each distance. 
 
 ```R
 # Example for cluster 1
@@ -120,5 +120,7 @@ Finally, we can visualize a specific cluster. In this example, we will plot clus
 ```R
 Plot_selected_cluster(Meta_data = Meta_data, selected_cluster = 2, title_show = "Cluster 2")
 ```
+<img src='Example_data/image_cluster10.png' width="500" height="500" alt="Image - Cluster 10">
+
 ## Step 8 : Comparing cluster's shape and parameter's values
 
