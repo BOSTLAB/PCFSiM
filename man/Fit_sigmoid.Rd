@@ -4,7 +4,7 @@
 \alias{Fit_sigmoid}
 \title{Fits the sigmoid model to Pcf(r)}
 \usage{
-Fit_sigmoid(x, y, show_plot = FALSE, initial_tau = 100)
+Fit_sigmoid(x, y, show_plot = FALSE, initial_tau = 100, title = k)
 }
 \arguments{
 \item{x}{A numeric vector.}
@@ -12,6 +12,8 @@ Fit_sigmoid(x, y, show_plot = FALSE, initial_tau = 100)
 \item{y}{A numeric vector of the same length as x.}
 
 \item{show_plot}{Logical; whether to show the fitted curve.}
+
+\item{title}{Title for the plot.}
 }
 \value{
 A vector containing fitting parameters.

@@ -4,7 +4,7 @@
 \alias{Fit_generalized_beta_prime}
 \title{Fits the generalized beta prime model to Pcf(r)}
 \usage{
-Fit_generalized_beta_prime(x, y, show_plot = FALSE)
+Fit_generalized_beta_prime(x, y, show_plot = FALSE, title = k)
 }
 \arguments{
 \item{x}{A numeric vector.}
@@ -12,6 +12,8 @@ Fit_generalized_beta_prime(x, y, show_plot = FALSE)
 \item{y}{A numeric vector of the same length as x.}
 
 \item{show_plot}{Logical; whether to show the fitted curve.}
+
+\item{title}{Title for the plot.}
 }
 \value{
 A vector containing fitting parameters.
