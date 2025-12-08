@@ -85,6 +85,24 @@ Results_gamma = Fit_parametric_pcf_model(List_pcf, model = "Gamma")
 Results_exponential = Fit_parametric_pcf_model(List_pcf, model = "Exponential")
 ```
 
+```R
+> Results_sigmoid
+            tau         p           C C_normalised        R2
+1  1.584778e+04 1.7660867   1.3143697 1.854187e+04 0.9986392
+2  7.606279e+03 1.0844619   1.9745209 1.456120e+04 0.9986247
+3  1.110755e-03 0.1898820   9.7085806 2.051720e+00 0.9105838
+4  1.902233e+04 1.2506343   1.6423637 2.909455e+04 0.9935964
+5  5.223852e+03 0.8434215   2.4072897 1.374852e+04 0.9959998
+6  9.201043e-04 0.2990848  78.2708179 6.761502e-01 0.9238887
+7  4.878858e+03 1.6556169   3.3491621 1.460759e+04 0.9965076
+8  7.615746e-05 0.3809986 626.0283606 1.822708e-01 0.7671358
+9  3.165779e+03 0.9249920   4.8571798 1.594629e+04 0.9960679
+10 4.365149e+02 0.9288234  17.8576479 8.066838e+03 0.9987493
+11 1.671197e+03 0.6635417   7.4604754 1.665685e+04 0.9411136
+12 1.759718e-02 0.2480675  91.0944570 4.032513e+01 0.9659157
+13 5.967917e+03 0.8463740   2.8248560 1.839056e+04 0.9660478
+14 3.934422e+04 0.5315289   0.6927876 4.899966e+04 0.7965860
+```
 ## Step 6: Compare Models with Boxplots
 
 To compare the performance of the fitted models, we can create boxplots.
@@ -92,6 +110,7 @@ To compare the performance of the fitted models, we can create boxplots.
 ```R
 Model_comparison_boxplot(list_results = list(Model_Sigmoid = Results_sigmoid,Model_Gamma = Results_gamma,Model_exponential = Results_exponential))
 ```
+<img src='Example_data/comparison_boxplots_cluster10.png' width="500" height="500" alt="Boxplots R2 comparison - Cluster 10">
 
 ## Step 7: Plot Selected Cluster
 
