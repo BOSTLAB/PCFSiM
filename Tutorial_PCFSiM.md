@@ -63,15 +63,15 @@ For each cluster, the results consist of 2 lists of equal length, one containing
 We can fit different models to the PCF data for a specific cluster. In this example, we will fit models for cluster `k = 3`.
 
 ```R
-k = 13
-
+k = 10
 x = List_pcf$List_r[[k]]
 y = List_pcf$List_pcf[[k]]
 
 m_expo = try(Fit_exponential(x,y,show_plot = TRUE))
 m_sigmoid = try(Fit_sigmoid(x,y,show_plot = TRUE))
 ```
-<img src= 'Example_data/QC.png' width="1000" height="500">
+<img src= 'Example_data/Cluster10_exponential.png' width="1000" height="500">
+<img src= 'Example_data/Cluster10_sigmoid.png' width="1000" height="500">
 
 ## Step 5: Retrieve Fitting Results for All Clusters
 
