@@ -77,7 +77,7 @@ m_sigmoid = try(Fit_sigmoid(x,y,show_plot = TRUE))
 
 ## Step 5: Retrieve Fitting Results for All Clusters
 
-We can retrieve fitting results for all clusters using different parametric models.
+We can retrieve fitting results for each of the 14 clusters using different parametric models.
 
 ```R
 Results_sigmoid = Fit_parametric_pcf_model(List_pcf, model = "Sigmoid")
@@ -105,10 +105,11 @@ Results_exponential = Fit_parametric_pcf_model(List_pcf, model = "Exponential")
 ```
 ## Step 6: Compare Models with Boxplots
 
-To compare the performance of the fitted models, we can create boxplots.
+To compare the performance of the fitted models, we can create boxplots showing the R2 values for each fitted model.
 
 ```R
-Model_comparison_boxplot(list_results = list(Model_Sigmoid = Results_sigmoid,Model_Gamma = Results_gamma,Model_exponential = Results_exponential))
+Model_comparison_boxplot(list_results = list(Model_Sigmoid = Results_sigmoid,
+Model_Gamma = Results_gamma,Model_exponential = Results_exponential))
 ```
 <img src='Example_data/comparison_boxplots_cluster10.png' width="500" height="500" alt="Boxplots R2 comparison - Cluster 10">
 
@@ -119,4 +120,5 @@ Finally, we can visualize a specific cluster. In this example, we will plot clus
 ```R
 Plot_selected_cluster(Meta_data = Meta_data, selected_cluster = 2, title_show = "Cluster 2")
 ```
+## Step 8 : Comparing cluster's shape and parameter's values
 
