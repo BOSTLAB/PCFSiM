@@ -10,4 +10,6 @@ Authors@R:
 Maintainer: Pierre BOST <pierre.bost@curie.fr>
 RoxygenNote: 7.3.2
 Encoding: UTF-8
-
+Depends: 
+    R (>= 3.5)
+LazyData: true

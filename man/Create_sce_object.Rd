@@ -4,24 +4,19 @@
 \alias{Create_sce_object}
 \title{Create a SingleCellExperiment object from a data.frame}
 \usage{
-Create_sce_object(
-  df,
-  cell_centroid_x = "cell_centroid_x",
-  cell_centroid_y = "cell_centroid_y",
-  Clustering = "Clustering"
-)
+Create_sce_object(df, cell_centroid_x = 2, cell_centroid_y = 3, Labels = 4)
 }
 \arguments{
-\item{df}{A data.frame containing at least coordinates and clustering info.}
+\item{df}{A data.frame containing at least coordinates and Labels info.}
 
 \item{cell_centroid_x}{Name of the column for x coordinates (default: "cell_centroid_x").}
 
 \item{cell_centroid_y}{Name of the column for y coordinates (default: "cell_centroid_y").}
 
-\item{Clustering}{Name of the column for cluster labels (default: "Clustering").}
+\item{Labels}{Name of the column for cluster labels (default: "Labels").}
 }
 \value{
-A SingleCellExperiment object with coordinates and cluster labels.
+A SingleCellExperiment object with coordinates and labels.
 }
 \description{
 Create a SingleCellExperiment object from a data.frame

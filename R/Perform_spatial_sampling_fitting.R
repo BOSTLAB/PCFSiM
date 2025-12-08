@@ -16,7 +16,6 @@
 #'   \item{C_normalised}{Matrix of normalised amplitudes.}
 #'   \item{R2}{Matrix of model \eqn{R^2} values.}
 #' }
-#' @importFrom balagan Random_spatial_sampling
 #' @importFrom SingleCellExperiment colLabels
 #' @importFrom spatstat.explore Kest.fft pcf.fv
 #' @export
@@ -26,7 +25,7 @@ Perform_spatial_sampling_fitting = function(sce,N_min_cells = 1000,FoV_width=500
   cat("Perfoming sampling....")
   for (k in 1:N_sampling) {
     print(k)
-    x = Random_spatial_sampling(sce,width_FOV = FoV_width,height_FOV = FoV_width,N_samplings = 1,plot_result = FALSE)
+    x = balagan::Random_spatial_sampling(sce,width_FOV = FoV_width,height_FOV = FoV_width,N_samplings = 1,plot_result = FALSE)
     List_sampled_cells[[k]]= x$List_sampled_cells
   }
   cat("done ! \n")

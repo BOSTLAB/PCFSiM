@@ -19,7 +19,10 @@ Compute_pcf(
 
 \item{r_vector}{Numeric vector of radii at which to compute the PCF.}
 
-\item{computation_method}{Either \code{"direct"} or \code{"derivative"}.}
+\item{computation_method}{Either \code{"direct"}  or \code{"derivative"} The direct method calculates the pcf 
+directly from the cellular point pattern model (pcf.ppp) using a kernel estimator,
+which is conceptually simpler but generally slower for very dense point patterns. The derivative method uses the Fast Fourier Transform (FFT) 
+to efficiently calculate Ripley's K function (Kest.fft), and then obtains the pcf by differentiating the K function for optimal performance on large datasets.}
 
 \item{verbose}{Logical; whether to print progress information.}
 }
