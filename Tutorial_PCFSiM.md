@@ -70,9 +70,9 @@ y = List_pcf$List_pcf[[k]]
 m_expo = try(Fit_exponential(x,y,show_plot = TRUE))
 m_sigmoid = try(Fit_sigmoid(x,y,show_plot = TRUE))
 ```
-<div style="display: flex; gap: 50px;">
-  <img src='Example_data/Cluster10_exponential.png' width="400" height="400" alt="Exponential Cluster Plot">
-  <img src='Example_data/Cluster10_sigmoid.png' width="400" height="400" alt="Sigmoid Cluster Plot">
+<div style="display: flex; gap: 10px;">
+  <img src='Example_data/Cluster10_exponential.png' width="500" height="500" alt="Exponential Cluster Plot">
+  <img src='Example_data/Cluster10_sigmoid.png' width="500" height="500" alt="Sigmoid Cluster Plot">
 </div>
 
 ## Step 5: Retrieve Fitting Results for All Clusters
