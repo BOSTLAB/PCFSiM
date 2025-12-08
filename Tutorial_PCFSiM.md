@@ -7,7 +7,12 @@ This tutorial provides a step-by-step guide on how to use the PCFSiM library for
 First, we need to load the metadata containing for each observation (here cells), information about the location on both axis and the label associated (here the cluster of each cell).
 
 ```R
+library(PCFSiM)
+
 Meta_data = read.csv('Example_data/Frontal_cortex_data.csv')
+
+# OR
+data(Frontal_cortex_data)
 ```
 
 ## Step 2: Create SCE Object
