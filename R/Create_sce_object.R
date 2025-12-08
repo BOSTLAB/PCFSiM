@@ -13,7 +13,7 @@ Create_sce_object = function(df, cell_centroid_x='cell_centroid_x',cell_centroid
   if (!all(c(cell_centroid_x, cell_centroid_y, Clustering) %in% colnames(df))) {
     stop("One or more specified columns do not exist in the input data.frame.")
   }
-  sce <- SingleCellExperiment(
+  sce <- SingleCellExperiment::SingleCellExperiment(
     assays = list(
       Raw_intensity = matrix(0, nrow = 2, ncol = nrow(df))
     ),
