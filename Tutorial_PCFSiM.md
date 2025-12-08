@@ -25,7 +25,39 @@ Now, we compute the pair correlation function (PCF) using the SCE object. We def
 ```R
 List_pcf = Compute_pcf(sce, r_vector = seq(0, 10000, length.out = 50), computation_method = "direct", verbose = TRUE)
 ```
+For each cluster, the results consist of 2 lists of equal length, one containing the r distances, the other with the computed PCF values at each distance.
 
+```R
+# Example for cluster 1
+> List_pcf$List_r[[1]]
+ [1]     0.0000   204.0816   408.1633   612.2449   816.3265  1020.4082  1224.4898  1428.5714  1632.6531  1836.7347
+[11]  2040.8163  2244.8980  2448.9796  2653.0612  2857.1429  3061.2245  3265.3061  3469.3878  3673.4694  3877.5510
+[21]  4081.6327  4285.7143  4489.7959  4693.8776  4897.9592  5102.0408  5306.1224  5510.2041  5714.2857  5918.3673
+[31]  6122.4490  6326.5306  6530.6122  6734.6939  6938.7755  7142.8571  7346.9388  7551.0204  7755.1020  7959.1837
+[41]  8163.2653  8367.3469  8571.4286  8775.5102  8979.5918  9183.6735  9387.7551  9591.8367  9795.9184 10000.0000
+> List_pcf$List_pcf[[1]]
+ [1]      Inf 2.316006 2.319996 2.320791 2.314586 2.302970 2.298097 2.295581 2.289330 2.282822 2.275866 2.269633
+[13] 2.267929 2.258033 2.252165 2.242558 2.231161 2.223281 2.217886 2.208093 2.203889 2.194876 2.186921 2.177837
+[25] 2.165261 2.156259 2.147899 2.138092 2.128085 2.119321 2.109654 2.100618 2.087569 2.078641 2.070464 2.060627
+[37] 2.049533 2.039763 2.028423 2.018728 2.007578 1.998215 1.987032 1.977078 1.964774 1.954931 1.945353 1.933477
+[49] 1.922903 1.864913
+> List_pcf$Annotation
+   ROI Cluster
+1    1       1
+2    1       2
+3    1       3
+4    1       4
+5    1       5
+6    1       6
+7    1       7
+8    1       8
+9    1       9
+10   1      10
+11   1      11
+12   1      12
+13   1      13
+14   1      14
+```
 ## Step 4: Fit Models for a Specific Cluster
 
 We can fit different models to the PCF data for a specific cluster. In this example, we will fit models for cluster `k = 3`.
