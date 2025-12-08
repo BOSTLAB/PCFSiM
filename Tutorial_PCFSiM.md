@@ -12,10 +12,11 @@ Meta_data = read.csv('Example_data/Frontal_cortex_data.csv')
 
 ## Step 2: Create SCE Object
 
-Next, we create a SingleCellExperiment (SCE) object using the loaded metadata. We specify the columns for cell centroids and clustering.
+Next, we create a SingleCellExperiment (SCE) object using the loaded metadata. We specify the index of the columns for cell centroids and labels.
 
 ```R
-sce = Create_sce_object(Meta_data,cell_centroid_x = "cell_centroid_x",cell_centroid_y = "cell_centroid_y",Clustering = "Clustering")
+sce = Create_sce_object(Meta_data,cell_centroid_x = 2,cell_centroid_y = 3,Labels = 4)
+
 ```
 
 ## Step 3: Compute Pair Correlation Function (PCF)
