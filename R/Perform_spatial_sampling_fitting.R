@@ -40,20 +40,24 @@ Perform_spatial_sampling_fitting = function(sce,N_min_cells = 1000,FoV_width=500
   Table_sampling_p = c()
   Table_sampling_C_normalised = c()
   Table_sampling_R2 = c()
-  
-  for (k in 1:length(List_sampled_cells_filtered)) {
-    print(k)
-    sce_temp = sce[,List_sampled_cells_filtered[[k]]]
-    List_pcf_temp = Compute_pcf(sce_temp,r_vector = seq(0,FoV_width/sqrt(2),length.out=50),computation_method = "derivative")
-    Results_sigmoid_temp= Fit_parametric_pcf_model(List_pcf_temp,model = "Sigmoid")
-    rownames(Results_sigmoid_temp) = List_pcf_temp$Annotation$Cluster
-    Results_sigmoid_temp = Results_sigmoid_temp[as.character(List_pcf$Annotation$Cluster),]
-    Table_sampling_tau = rbind(Table_sampling_tau,Results_sigmoid_temp$tau)
-    Table_sampling_p = rbind(Table_sampling_p,Results_sigmoid_temp$p)
-    Table_sampling_C_normalised = rbind(Table_sampling_C_normalised,Results_sigmoid_temp$C_normalised)
-    Table_sampling_R2 = rbind(Table_sampling_R2,Results_sigmoid_temp$R2)
+  if(length(List_sampled_cells_filtered)) {
+    for (k in 1:length(List_sampled_cells_filtered)) {
+      print(k)
+      sce_temp = sce[,List_sampled_cells_filtered[[k]]]
+      List_pcf_temp = Compute_pcf(sce_temp,r_vector = seq(0,FoV_width/sqrt(2),length.out=50),computation_method = "derivative")
+      Results_sigmoid_temp= Fit_parametric_pcf_model(List_pcf_temp,model = "Sigmoid")
+      rownames(Results_sigmoid_temp) = List_pcf_temp$Annotation$Cluster
+      Results_sigmoid_temp = Results_sigmoid_temp[as.character(List_pcf$Annotation$Cluster),]
+      Table_sampling_tau = rbind(Table_sampling_tau,Results_sigmoid_temp$tau)
+      Table_sampling_p = rbind(Table_sampling_p,Results_sigmoid_temp$p)
+      Table_sampling_C_normalised = rbind(Table_sampling_C_normalised,Results_sigmoid_temp$C_normalised)
+      Table_sampling_R2 = rbind(Table_sampling_R2,Results_sigmoid_temp$R2)
+    }
+    cat("done ! \n")
+  } else {
+    cat("ERROR : No more sampled cells")
+    return(NULL)
   }
-  cat("done ! \n")
   return(list(Tau = Table_sampling_tau,P = Table_sampling_p,C_normalised = Table_sampling_C_normalised,R2 = Table_sampling_R2))
   
 }
