@@ -128,5 +128,3 @@ Plot_selected_cluster(Meta_data = Meta_data, selected_cluster = 2, title_show = 
 ```
 <img src='Example_data/image_cluster10.png' width="500" height="500" alt="Image - Cluster 10">
 
-## Step 8 : Comparing cluster's shape and parameter's values
-
