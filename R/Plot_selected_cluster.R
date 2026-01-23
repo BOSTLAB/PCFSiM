@@ -7,10 +7,10 @@
 #' @importFrom spatstat.geom owin
 #' @export
 
-Plot_selected_cluster = function(Meta_data = Meta_data, selected_cluster,title_show=NULL) {
-  ppp_temp = ppp(x = Meta_data$cell_centroid_x[Meta_data$Clustering==selected_cluster],
-                 y = Meta_data$cell_centroid_y[Meta_data$Clustering==selected_cluster],
-                 window = owin(xrange = range(Meta_data$cell_centroid_x),yrange = range(Meta_data$cell_centroid_y)))
+Plot_selected_cluster = function(Meta_data = Meta_data, cell_centroid_x=2, cell_centroid_y=3, Labels=4, selected_cluster,title_show=NULL) {
+  ppp_temp = ppp(x = Meta_data[[cell_centroid_x]][Meta_data[[Labels]]==selected_cluster],
+                 y = Meta_data[[cell_centroid_x]][Meta_data[[Labels]]==selected_cluster],
+                 window = owin(xrange = range(Meta_data[[cell_centroid_x]]),yrange = range(Meta_data[[cell_centroid_y]])))
   plot(ppp_temp,cex=0.2,main=title_show)
   
 }
