@@ -21,7 +21,7 @@ Create_sce_object = function(df, cell_centroid_x=2, cell_centroid_y=3, Labels=4)
     assays = list(Raw_intensity = matrix(0, nrow = 2, ncol = nrow(df))),
     metadata = list(dimension = "2D",N_core = 8,Is_nuc_cyt = FALSE))
   
-  SingleCellExperiment::colLabels(sce) = as.numeric(df[[Labels]])
+  SingleCellExperiment::colLabels(sce) = df[[Labels]]
 
   sce$Location_Center_X = df[[cell_centroid_x]]
   sce$Location_Center_Y = df[[cell_centroid_y]]
