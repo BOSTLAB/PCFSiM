@@ -124,7 +124,7 @@ Model_Gamma = Results_gamma,Model_exponential = Results_exponential))
 Finally, we can visualize a specific cluster. In this example, we will plot cluster `2`.
 
 ```R
-Plot_selected_cluster(Meta_data = Meta_data, selected_cluster = 2, title_show = "Cluster 2")
+Plot_selected_cluster(Meta_data = Meta_data, cell_centroid_x=2, cell_centroid_y=3, Labels=4, selected_cluster=10, title_show="Cluster 10")
 ```
 <img src='Example_data/image_cluster10.png' width="500" height="500" alt="Image - Cluster 10">
 
